@@ -250,7 +250,7 @@ def home():
 def estimate():
     try:
         data = request.get_json()
-
+        print("lakshin")
         # Extract input data
         team_A = data['team_A']
         team_B = data['team_B']
@@ -259,7 +259,7 @@ def estimate():
         wickets_fallen = 10- data['wickets_fallen']
         overs_completed = data['overs_completed']
         runs_still_required = data['runs_still_required']
-
+        print("lakshin1")
         # Calculate additional features
         balls_left_t = (20 - overs_completed) * 6
         crr = runs_scored / overs_completed
@@ -269,7 +269,7 @@ def estimate():
         # Determine team_1 and team_2
         team_1 = team_batting_first
         team_2 = team_A if team_batting_first == team_B else team_B
-
+        print("lakshin2")
         # Create DataFrame for prediction
         df = pd.DataFrame({
             'batting_team': [team_2],
@@ -285,7 +285,7 @@ def estimate():
 
         # Predict winning probability
         probability = model.predict_proba(df)[0]
-          
+        print("lakshin3") 
         team_A_prob =  round(probability[0] * 100)
         team_B_prob =  round(probability[1] * 100)
 
@@ -304,6 +304,7 @@ def estimate():
             'team_A_prob': team_B_prob,
             'team_B_prob': team_A_prob
         })
+        print("lakshin4")    
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': 'An error occurred during processing'}), 500
