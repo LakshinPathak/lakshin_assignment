@@ -282,10 +282,11 @@ def estimate():
             'crr': [crr],
             'rrr': [rrr]
         })
-
+        print("lakshin34")
+        print(df)
         # Predict winning probability
         probability = model.predict_proba(df)[0]
-        print("lakshin3") 
+        print("lakshin3"+probability) 
         team_A_prob =  round(probability[0] * 100)
         team_B_prob =  round(probability[1] * 100)
 
