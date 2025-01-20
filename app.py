@@ -270,11 +270,18 @@ def estimate():
         team_1 = team_batting_first
         team_2 = team_A if team_batting_first == team_B else team_B
         print("lakshin2")
+        cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
+       'Chandigarh', 'Jaipur', 'Chennai', 'Cape Town', 'Port Elizabeth',
+       'Durban', 'Centurion', 'East London', 'Johannesburg', 'Kimberley',
+       'Bloemfontein', 'Ahmedabad', 'Cuttack', 'Nagpur', 'Dharamsala',
+       'Visakhapatnam', 'Pune', 'Raipur', 'Ranchi', 'Abu Dhabi',
+       'Sharjah', 'Mohali', 'Bengaluru']
+        city1=city[2]
         # Create DataFrame for prediction
         df = pd.DataFrame({
             'batting_team': [team_2],
             'bowling_team': [team_1],
-            'city': ['Mumbai'],
+            'city': [city1],
             'runs_left': [runs_still_required],
             'balls_left': [balls_left_t],
             'wickets': [wickets_fallen],
